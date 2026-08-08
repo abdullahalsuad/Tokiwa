@@ -1,0 +1,27 @@
+[package]
+name = "tokiwa-backend"
+version = "0.1.0"
+edition = "2021"
+description = "Local, self-hosted time-tracking backend for Tokiwa"
+authors = []
+
+[[bin]]
+name = "tokiwa-backend"
+path = "src/main.rs"
+
+[dependencies]
+tokio       = { version = "1",    features = ["full"] }
+axum        = "0.7"
+tower-http  = { version = "0.5",  features = ["cors", "trace"] }
+serde       = { version = "1",    features = ["derive"] }
+serde_json  = "1"
+rusqlite    = { version = "0.31", features = ["bundled"] }
+r2d2        = "0.8"
+r2d2_sqlite = "0.24"
+x11rb       = "0.13"
+toml        = "0.8"
+tracing             = "0.1"
+tracing-subscriber  = { version = "0.3", features = ["env-filter"] }
+chrono      = { version = "0.4",  features = ["serde"] }
+thiserror   = "1"
+anyhow      = "1"
